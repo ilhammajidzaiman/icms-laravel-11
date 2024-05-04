@@ -21,5 +21,9 @@ Route::get('/template', function () {
     return view('template');
 })->name('template');
 
+Route::get('/user', function () {
+    return view('user');
+})->middleware(['auth', 'verified'])->name('user');
+
 
 require __DIR__ . '/auth.php';
