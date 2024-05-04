@@ -48,8 +48,15 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav flex-grow-1 me-auto text-capitalize">
                         <li class="nav-item">
-                            <a href="{{ route('dashboard') }}" class="nav-link">
+                            <a href="{{ route('dashboard') }}"
+                                class="nav-link {{ request()->routeIs('dashboard*') ? 'text-primary text-opacity-75' : '' }}">
                                 {{ __('Dashboard') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('template') }}"
+                                class="nav-link {{ request()->routeIs('template*') ? 'text-primary text-opacity-75' : '' }}">
+                                {{ __('Template') }}
                             </a>
                         </li>
                         <li class="nav-item dropdown">
