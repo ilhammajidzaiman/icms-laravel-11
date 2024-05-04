@@ -147,6 +147,7 @@
                         Selamat datang di aplikasi {{ env('APP_NAME') }}.
                     </p>
                 </div>
+            </div>
         </main>
     </section>
     <footer class="container py-5">
