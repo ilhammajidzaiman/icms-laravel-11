@@ -13,7 +13,6 @@
     <link rel="shortcut icon" href="{{ asset('image/laravel.svg') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/bootstrap/icons/font/bootstrap-icons.css') }}">
-
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -49,38 +48,57 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav flex-grow-1 me-auto text-capitalize">
                         <li class="nav-item">
-                            <a href="/dashboard" aria-current="page" class="nav-link">
-                                Dashboard
+                            <a href="{{ route('dashboard') }}" class="nav-link">
+                                {{ __('Dashboard') }}
                             </a>
                         </li>
                         <li class="nav-item dropdown">
                             <a role="button" data-bs-toggle="dropdown" aria-expanded="false"
                                 class="nav-link dropdown-toggle">
-                                Parent Menu
+                                Menu
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="/">Action</a></li>
-                                <li><a class="dropdown-item" href="/">Another action</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="/">
+                                        Action
+                                    </a>
+                                </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/">Something else here</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="/">
+                                        Something else here
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
                     <ul class="navbar-nav d-flex justify-content-end text-capitalize">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                class="nav-link dropdown-toggle">
                                 {{ Auth::user()->name ?? 'User' }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="/">Profil</a></li>
-                                <li><a class="dropdown-item" href="/">Another action</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                                        Profil
+                                    </a>
+                                </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/">Something else here</a></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); this.closest('form').submit();"
+                                            class="dropdown-item">
+                                            {{ __('Log Out') }}
+                                        </a>
+                                    </form>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -91,27 +109,48 @@
 
     {{-- container section --}}
     <section class="container mt-5 py-5">
-        <header class="my-3">
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="/">Dashboard</a>
-                    </li>
-                </ol>
-            </nav>
-            <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/template">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="breadcrumb-item active">
+                    Wellcome
+                </li>
+            </ol>
+        </nav>
+        <header class="row mb-3">
+            <div class="col-sm-6">
+                <h1>Dashboard</h1>
+            </div>
+            <div class="col-sm-6">
+                <div class="float-sm-end">
+                    <button type="submit" class="btn btn-primary">Mulai</button>
+                </div>
+            </div>
         </header>
         <main>
-            <div class="card border-0 shadow-sm">
+            <div class="card
+                border-0 shadow-sm">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                        of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">Hai {{ Auth::user()->name ?? 'User' }}.</h5>
+                    <p class="card-text">
+                        Selamat datang di aplikasi {{ env('APP_NAME') }}.
+                    </p>
                 </div>
         </main>
     </section>
+    <footer class="container py-5">
+        <div class="text-center">
+            <small class="text-secondary">
+                {{ env('APP_NAME') }}
+                &copy;
+                {{ date('Y') }}
+            </small>
+        </div>
+    </footer>
 
     <script src="{{ asset('/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 </body>
