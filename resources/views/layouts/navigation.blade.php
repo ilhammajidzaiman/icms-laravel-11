@@ -37,16 +37,33 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            class="nav-link dropdown-toggle {{ request()->routeIs('user*') ? 'text-primary text-opacity-75' : '' }}">
-                            Menu
+                            class="nav-link dropdown-toggle">
+                            Blog
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{{ route('user') }}"
-                                    class="dropdown-item {{ request()->routeIs('user*') ? 'text-primary text-opacity-75' : '' }}">
-                                    {{ __('user') }}
+                                <a href="{{ route('dashboard') }}" class="dropdown-item">
+                                    {{ __('Artikel') }}
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ route('dashboard') }}" class="dropdown-item">
+                                    {{ __('Tanda') }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('dashboard') }}" class="dropdown-item">
+                                    {{ __('Kategori') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                            class="nav-link dropdown-toggle">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu">
                             <li>
                                 <a href="{{ route('template') }}" class="dropdown-item">
                                     {{ __('Template') }}
@@ -56,8 +73,8 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <a class="dropdown-item" href="/">
-                                    Something else here
+                                <a class="dropdown-item" href="https://getbootstrap.com/">
+                                    Dokumentasi
                                 </a>
                             </li>
                         </ul>
