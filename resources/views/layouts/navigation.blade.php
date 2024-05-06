@@ -42,17 +42,20 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{{ route('dashboard') }}" class="dropdown-item">
+                                <a href="{{ route('article.index') }}"
+                                    class="dropdown-item {{ request()->routeIs('article*') ? 'text-primary text-opacity-75' : '' }}">
                                     {{ __('Artikel') }}
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('dashboard') }}" class="dropdown-item">
+                                <a href="{{ route('tag.index') }}"
+                                    class="dropdown-item {{ request()->routeIs('tag*') ? 'text-primary text-opacity-75' : '' }}">
                                     {{ __('Tanda') }}
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('dashboard') }}" class="dropdown-item">
+                                <a href="{{ route('category.index') }}"
+                                    class="dropdown-item {{ request()->routeIs('category*') ? 'text-primary text-opacity-75' : '' }}">
                                     {{ __('Kategori') }}
                                 </a>
                             </li>

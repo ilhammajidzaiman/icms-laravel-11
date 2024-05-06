@@ -37,3 +37,45 @@ Route::resource('user', Controllers\UserController::class)
         'update' => 'user.update',
         'destroy' => 'user.delete',
     ]);
+
+Route::resource('category', Controllers\CategoryController::class)
+    ->scoped([
+        'category' => 'slug',
+    ])
+    ->names([
+        'inde' => 'category.index',
+        'create' => 'category.create',
+        'store' => 'category.store',
+        'show' => 'category.show',
+        'edit' => 'category.edit',
+        'update' => 'category.update',
+        'destroy' => 'category.delete',
+    ]);
+
+Route::resource('tag', Controllers\TagController::class)
+    ->scoped([
+        'tag' => 'slug',
+    ])
+    ->names([
+        'inde' => 'tag.index',
+        'create' => 'tag.create',
+        'store' => 'tag.store',
+        'show' => 'tag.show',
+        'edit' => 'tag.edit',
+        'update' => 'tag.update',
+        'destroy' => 'tag.delete',
+    ]);
+
+Route::resource('article', Controllers\ArticleController::class)
+    ->scoped([
+        'article' => 'slug',
+    ])
+    ->names([
+        'inde' => 'article.index',
+        'create' => 'article.create',
+        'store' => 'article.store',
+        'show' => 'article.show',
+        'edit' => 'article.edit',
+        'update' => 'article.update',
+        'destroy' => 'article.delete',
+    ]);
