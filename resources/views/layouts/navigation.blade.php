@@ -30,7 +30,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('user') }}"
+                        <a href="{{ route('user.index') }}"
                             class="nav-link {{ request()->routeIs('user*') ? 'text-primary text-opacity-75' : '' }}">
                             {{ __('User') }}
                         </a>
