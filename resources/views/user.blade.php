@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
+    <x-slot name="title">
         {{ __('User') }}
     </x-slot>
     <x-slot name="button">
