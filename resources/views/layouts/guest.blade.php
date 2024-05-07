@@ -27,61 +27,8 @@
 </head>
 
 <body class="bg-light">
-    <section class="container mt-5 py-5">
-        <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <div class="text-center mb-5">
-                    <img src="{{ asset('image/laravel.svg') }}" alt="logo" width="70">
-                </div>
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                            <div class="mb-3">
-                                <x-form.input-label for="email" :value="__('Email / Username')" />
-                                <x-form.text-input type="text" name="email" id="email" :value="old('email')" />
-                                <x-form.input-error :messages="$errors->get('email')" />
-                            </div>
 
-                            <div class="mb-3">
-                                <x-form.input-label for="password" :value="__('Password')" />
-                                <x-form.text-input type="password" name="password" id="password" />
-                                <x-form.input-error :messages="$errors->get('password')" />
-                            </div>
-
-                            {{-- <div class="mb-3">
-                                <label for="email" class="form-label">Email / Username</label>
-                                <input type="text" name="email" id="email" class="form-control">
-                                <div class="invalid-feedback">
-                                    Please enter a message in the textarea.
-                                </div>
-                            </div> --}}
-                            {{-- <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" name="password" id="password" class="form-control">
-                            </div> --}}
-                            <div class="form-check mb-3">
-                                <input type="checkbox" name="remember" id="remember_me" class="form-check-input">
-                                <label for="remember_me" class="form-check-label">
-                                    {{ __('Ingat saya') }}
-                                </label>
-                            </div>
-                            <div class="d-grid mb-3">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Log in') }}
-                                </button>
-                            </div>
-                            <div class="float-end">
-                                <a href="" class="">
-                                    {{ __('Lupa kata sandi anda?') }}
-                                </a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {{ $slot }}
 
     <footer class="container py-5">
         <div class="text-center">

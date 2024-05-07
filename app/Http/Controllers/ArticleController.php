@@ -12,7 +12,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('article.index');
+        return view('private.article.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('article.index');
+        return view('private.article.index');
     }
 
     /**
@@ -36,7 +36,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return view('article.index');
+        return view('private.article.index');
     }
 
     /**
@@ -44,7 +44,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return view('article.index');
+        return view('private.article.index');
     }
 
     /**

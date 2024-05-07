@@ -12,7 +12,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        return view('tag.index');
+        return view('private.tag.index');
     }
 
     /**
@@ -20,7 +20,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view('tag.index');
+        return view('private.tag.index');
     }
 
     /**
@@ -36,7 +36,7 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        return view('tag.index');
+        return view('private.tag.index');
     }
 
     /**
@@ -44,7 +44,7 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        return view('tag.index');
+        return view('private.tag.index');
     }
 
     /**

@@ -8,10 +8,9 @@
         </button>
     </x-slot>
 
-    <div class="card border-0 shadow-sm">
-        <div class="card-body">
+    <x-card>
+        <x-card.body>
             <h5 class="card-title">Hai {{ Auth::user()->name ?? 'User' }}.</h5>
-
-        </div>
-    </div>
+        </x-card.body>
+    </x-card>
 </x-app-layout>
