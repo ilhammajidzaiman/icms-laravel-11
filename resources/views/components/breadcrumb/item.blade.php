@@ -1,11 +1,9 @@
 @props([
-    'class' => 'form-control',
-    'disabled' => false,
+    'class' => null,
+    'value' => 'Dashboard',
 ])
-{{-- <input {{ $disabled ? 'disabled' : '' }} {{ $attributes->merge(['class' => $class]) }}> --}}
-
 <li class="breadcrumb-item">
-    <a href="{{ route('dashboard') }}">
-        Dashboard
+    <a {{ $attributes->merge(['class' => $class]) }}">
+        {{ $value ?? $slot }}
     </a>
 </li>

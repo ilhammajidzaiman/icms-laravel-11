@@ -1,11 +1,18 @@
 <x-app-layout>
-    <x-slot name="title">
-        {{ __('User') }}
+    <x-slot name="breadcrumb">
+        <x-breadcrumb>
+            <x-breadcrumb.item :href="route('dashboard')" :value="__('Dashboard')" />
+            <x-breadcrumb.item :href="route('user.index')" :value="__('User')" />
+            <x-breadcrumb.item :href="route('user.show', ['user' => 'slug'])" :value="__('Lihat')" />
+        </x-breadcrumb>
     </x-slot>
+
+    <x-slot name="title">
+        {{ __('Lihat User') }}
+    </x-slot>
+
     <x-slot name="button">
-        <button type="submit" class="btn btn-primary">
-            {{ __('Mulai') }}
-        </button>
+        <x-link :href="route('user.edit', ['user' => 'slug'])" :value="__('Ubah')" icon="bi bi-pencil" class="btn btn-success" />
     </x-slot>
 
     <div class="card border-0 shadow-sm">

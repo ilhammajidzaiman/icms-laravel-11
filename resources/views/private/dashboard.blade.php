@@ -1,12 +1,18 @@
 <x-app-layout>
+    <x-slot name="breadcrumb">
+        <x-breadcrumb>
+            <x-breadcrumb.item :href="route('dashboard')" :value="__('Dashboard')" />
+        </x-breadcrumb>
+    </x-slot>
+
     <x-slot name="title">
         {{ __('Dashboard') }}
     </x-slot>
-    <x-slot name="button">
+    {{-- <x-slot name="button">
         <button type="submit" class="btn btn-primary">
             {{ __('Mulai') }}
         </button>
-    </x-slot>
+    </x-slot> --}}
 
     <x-card>
         <x-card.body>

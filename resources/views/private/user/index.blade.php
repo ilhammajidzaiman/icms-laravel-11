@@ -1,11 +1,17 @@
 <x-app-layout>
+    <x-slot name="breadcrumb">
+        <x-breadcrumb>
+            <x-breadcrumb.item :href="route('dashboard')" :value="__('Dashboard')" />
+            <x-breadcrumb.item :href="route('user.index')" :value="__('User')" />
+        </x-breadcrumb>
+    </x-slot>
+
     <x-slot name="title">
         {{ __('User') }}
     </x-slot>
+
     <x-slot name="button">
-        <a href="{{ route('user.create') }}" class="btn btn-primary">
-            {{ __('Baru') }}
-        </a>
+        <x-link :href="route('user.create')" :value="__('Baru')" class="btn btn-primary" />
     </x-slot>
 
     <x-card>

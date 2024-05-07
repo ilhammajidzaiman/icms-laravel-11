@@ -47,7 +47,7 @@
             {{ $breadcrumb }}
         @endif
 
-        <header class="row mb-3">
+        <header class="row mb-3 text-capitalize">
             <div class="col-sm-6">
                 @if (isset($title))
                     <h1>{{ $title }}</h1>
