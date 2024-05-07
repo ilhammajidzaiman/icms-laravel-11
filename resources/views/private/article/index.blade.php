@@ -1,11 +1,12 @@
 <x-app-layout>
+
     <x-slot name="title">
         {{ __('article') }}
     </x-slot>
     <x-slot name="button">
-        <button type="submit" class="btn btn-primary">
-            {{ __('Mulai') }}
-        </button>
+        <a href="" class="btn btn-primary">
+            {{ __('Baru') }}
+        </a>
     </x-slot>
 
     <x-card>

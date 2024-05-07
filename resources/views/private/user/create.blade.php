@@ -1,12 +1,35 @@
 <x-app-layout>
+
+    <x-slot name="breadcrumb">
+        {{-- <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{ route('dashboard') }}">
+                        Dashboard
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('user.index') }}">
+                        User
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ request()->fullUrl() }}">
+                        Baru
+                    </a>
+                </li>
+            </ol>
+        </nav> --}}
+        <x-breadcrumb>
+            <x-breadcrumb.item />
+        </x-breadcrumb>
+    </x-slot>
+
+
+
     <x-slot name="title">
         {{ __('User Baru') }}
     </x-slot>
-    {{-- <x-slot name="button">
-        <button type="submit" class="btn btn-primary">
-            {{ __('Mulai') }}
-        </button>
-    </x-slot> --}}
 
     <x-card>
         <x-card.body>
@@ -37,7 +60,12 @@
                     <x-form.input.text type="text" name="file" id="file" :value="old('file')" />
                     <x-form.input.error :messages="$errors->get('file')" />
                 </x-form.input>
+                <a href="{{ route('user.index') }}" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i>
+                    {{ __('Kembali') }}
+                </a>
                 <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-send"></i>
                     {{ __('Kirim') }}
                 </button>
             </x-form>

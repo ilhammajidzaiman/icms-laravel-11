@@ -3,9 +3,9 @@
         {{ __('User') }}
     </x-slot>
     <x-slot name="button">
-        <button type="submit" class="btn btn-primary">
-            {{ __('Mulai') }}
-        </button>
+        <a href="{{ route('user.create') }}" class="btn btn-primary">
+            {{ __('Baru') }}
+        </a>
     </x-slot>
 
     <x-card>

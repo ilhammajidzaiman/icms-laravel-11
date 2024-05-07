@@ -30,7 +30,7 @@
     @include('layouts.navigation')
 
     <section class="container mt-5 py-5">
-        <nav>
+        {{-- <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="/template">
@@ -41,7 +41,11 @@
                     Wellcome
                 </li>
             </ol>
-        </nav>
+        </nav> --}}
+
+        @if (isset($breadcrumb))
+            {{ $breadcrumb }}
+        @endif
 
         <header class="row mb-3">
             <div class="col-sm-6">
