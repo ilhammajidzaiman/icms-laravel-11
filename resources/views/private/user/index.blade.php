@@ -23,7 +23,7 @@
                         <x-table.th>nama</x-table.th>
                         <x-table.th>username</x-table.th>
                         <x-table.th>email</x-table.th>
-                        <x-table.th>email</x-table.th>
+                        <x-table.th>&nbsp;</x-table.th>
                     </x-table.tr>
                 </x-table.thead>
                 <x-table.tbody>
@@ -38,6 +38,8 @@
                     @endforeach
                 </x-table.tbody>
             </x-table>
+
+            {{ $users->links() }}
         </x-card.body>
     </x-card>
 </x-app-layout>
