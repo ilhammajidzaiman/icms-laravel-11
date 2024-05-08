@@ -16,10 +16,28 @@
 
     <x-card>
         <x-card.body>
-            <h5 class="card-title">Hai {{ Auth::user()->name ?? 'User' }}.</h5>
-            <p class="card-text">
-                Daftar User
-            </p>
+            <x-table>
+                <x-table.thead>
+                    <x-table.tr>
+                        <x-table.th>#</x-table.th>
+                        <x-table.th>nama</x-table.th>
+                        <x-table.th>username</x-table.th>
+                        <x-table.th>email</x-table.th>
+                        <x-table.th>email</x-table.th>
+                    </x-table.tr>
+                </x-table.thead>
+                <x-table.tbody>
+                    @foreach ($users as $key => $item)
+                        <x-table.tr>
+                            <x-table.th>{{ $users->firstItem() + $key }}</x-table.th>
+                            <x-table.td>{{ $item->name }}</x-table.td>
+                            <x-table.td>{{ $item->username }}</x-table.td>
+                            <x-table.td>{{ $item->email }}</x-table.td>
+                            <x-table.td>{{ $item->name }}</x-table.td>
+                        </x-table.tr>
+                    @endforeach
+                </x-table.tbody>
+            </x-table>
         </x-card.body>
     </x-card>
 </x-app-layout>
