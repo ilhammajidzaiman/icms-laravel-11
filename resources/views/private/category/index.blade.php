@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot name="title">
+    <x-slot name="header">
         {{ __('kategori') }}
     </x-slot>
     <x-slot name="button">

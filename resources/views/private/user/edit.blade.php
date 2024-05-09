@@ -7,7 +7,7 @@
         </x-breadcrumb>
     </x-slot>
 
-    <x-slot name="title">
+    <x-slot name="header">
         {{ __('Ubah User') }}
     </x-slot>
 

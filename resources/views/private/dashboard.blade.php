@@ -5,7 +5,7 @@
         </x-breadcrumb>
     </x-slot>
 
-    <x-slot name="title">
+    <x-slot name="header">
         {{ __('Dashboard') }}
     </x-slot>
     {{-- <x-slot name="button">

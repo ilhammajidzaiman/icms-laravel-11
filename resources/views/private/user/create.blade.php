@@ -2,13 +2,13 @@
     <x-slot name="breadcrumb">
         <x-breadcrumb>
             <x-breadcrumb.item :href="route('dashboard')" :value="__('Dashboard')" />
-            <x-breadcrumb.item :href="route('user.index')" :value="__('User')" />
-            <x-breadcrumb.item :href="route('user.create')" :value="__('Baru')" />
+            <x-breadcrumb.item :href="route($title . '.index')" :value="__($title ?? 'Breadcrumb')" />
+            <x-breadcrumb.item :href="route($title . '.create')" :value="__('Baru')" />
         </x-breadcrumb>
     </x-slot>
 
-    <x-slot name="title">
-        {{ __('Buat User') }}
+    <x-slot name="header">
+        {{ __('Buat ' . $title) }}
     </x-slot>
 
     <x-card>
@@ -45,7 +45,7 @@
                     <x-form.input.error :messages="$errors->get('file')" />
                 </x-form.input>
 
-                <x-link :href="route('user.index')" :value="__('Kembali')" icon="bi bi-arrow-left" class="btn btn-secondary me-2" />
+                <x-link :href="route($title . '.index')" :value="__('Kembali')" icon="bi bi-arrow-left" class="btn btn-secondary me-2" />
 
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-send"></i>

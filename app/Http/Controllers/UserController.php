@@ -7,58 +7,46 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    private $title = 'user';
+
+    // public function __construct()
+    // {
+    //     $this->title = 'user';
+    // }
+
     public function index()
     {
-        $data['users']                  = User::orderByDesc('id')->paginate(10);
+        $data['title']          = $this->title;
+        $data['users']          = User::orderByDesc('id')->paginate(5);
         return view('private.user.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('private.user.create');
+        $data['title']          = $this->title;
+        return view('private.user.create', $data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         return view('private.user.show');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         return view('private.user.edit');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //

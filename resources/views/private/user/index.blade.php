@@ -2,16 +2,16 @@
     <x-slot name="breadcrumb">
         <x-breadcrumb>
             <x-breadcrumb.item :href="route('dashboard')" :value="__('Dashboard')" />
-            <x-breadcrumb.item :href="route('user.index')" :value="__('User')" />
+            <x-breadcrumb.item :href="route('user.index')" :value="__($title)" />
         </x-breadcrumb>
     </x-slot>
 
-    <x-slot name="title">
-        {{ __('User') }}
+    <x-slot name="header">
+        {{ __($title) }}
     </x-slot>
 
     <x-slot name="button">
-        <x-link :href="route('user.create')" :value="__('Baru')" class="btn btn-primary" />
+        <x-link :href="route($title . '.create')" :value="__('Baru')" class="btn btn-primary" />
     </x-slot>
 
     <x-card>
@@ -33,7 +33,7 @@
                             <x-table.td>{{ $item->name }}</x-table.td>
                             <x-table.td>{{ $item->username }}</x-table.td>
                             <x-table.td>{{ $item->email }}</x-table.td>
-                            <x-table.td>{{ $item->name }}</x-table.td>
+                            <x-table.td>{{ $item->created_at->translatedFormat('l, j F Y H:i:s') }}</x-table.td>
                         </x-table.tr>
                     @endforeach
                 </x-table.tbody>

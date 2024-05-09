@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>
-        @isset($title)
-            {{ $title . ' | ' . env('APP_NAME') }}
+
+        @isset($header)
+            {{ Str::headline($header) . ' | ' . env('APP_NAME') }}
         @else
             {{ env('APP_NAME') }}
         @endisset
@@ -49,8 +50,8 @@
 
         <header class="row mb-3 text-capitalize">
             <div class="col-sm-6">
-                @if (isset($title))
-                    <h1>{{ $title }}</h1>
+                @if (isset($header))
+                    <h1>{{ $header }}</h1>
                 @endif
             </div>
             <div class="col-sm-6">
